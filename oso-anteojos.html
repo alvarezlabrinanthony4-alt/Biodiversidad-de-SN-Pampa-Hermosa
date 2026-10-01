@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oso de Anteojos</title>
+
+  <style>
+    body{
+      margin:0;
+      background:#1E3D2B;
+      color:#fff;
+      font-family:Arial, sans-serif;
+      text-align:center;
+      padding:24px 16px;
+    }
+
+    .btn{
+      display:inline-block;
+      color:white;
+      text-decoration:none;
+      background:#3F6B47;
+      padding:10px 18px;
+      border-radius:10px;
+      margin:6px 0 16px;
+      font-weight:600;
+    }
+
+    .logoWrap{
+      margin:10px 0 6px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+    }
+    .logoWrap img{
+      width:110px;
+      height:auto;
+      border-radius:10px;
+      background:#fff;
+      padding:6px;
+    }
+    .logoWrap small{
+      color:#cfe6d6;
+      font-weight:600;
+    }
+
+    h1{
+      margin:10px 0 4px;
+      font-size:40px;
+      line-height:1.05;
+    }
+    .latin{
+      margin:0 0 14px;
+      color:#cfe6d6;
+      font-style:italic;
+      font-weight:600;
+    }
+
+    .hero{
+      width:min(980px, 95%);
+      height:auto;
+      border-radius:18px;
+      margin:10px auto 18px;
+      display:block;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .card{
+      width:min(980px, 95%);
+      margin:18px auto;
+      background:#244C34;
+      border-radius:18px;
+      padding:20px;
+      text-align:left;
+      box-shadow:0 10px 30px rgba(0,0,0,0.18);
+    }
+    .card h2{
+      margin:0 0 10px;
+      text-align:center;
+    }
+    .card p{
+      margin:0;
+      line-height:1.45;
+      color:#eaf5ef;
+      font-size:16px;
+    }
+
+    .sectionTitle{
+      margin:22px 0 12px;
+      font-size:26px;
+      font-weight:800;
+    }
+
+    .thumbRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .thumb{
+      width:160px;
+      height:120px;
+      border-radius:12px;
+      object-fit:cover;
+      cursor:pointer;
+      box-shadow:0 8px 18px rgba(0,0,0,0.22);
+    }
+
+    .videoThumbBox{
+      position:relative;
+      width:160px;
+      height:120px;
+      cursor:pointer;
+    }
+    .videoThumbBox img{
+      width:160px;
+      height:120px;
+      border-radius:12px;
+      object-fit:cover;
+      display:block;
+      box-shadow:0 8px 18px rgba(0,0,0,0.22);
+    }
+    .playBadge{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .playBadge span{
+      background:rgba(0,0,0,0.55);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:18px;
+      user-select:none;
+    }
+
+    .audioBtn{
+      width:min(980px, 95%);
+      margin:10px auto 0;
+      display:flex;
+      justify-content:center;
+    }
+    .audioBtn button{
+      width:100%;
+      border:none;
+      background:#3F6B47;
+      color:#fff;
+      padding:14px 14px;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .note{
+      color:#cfe6d6;
+      font-size:12px;
+      margin:8px 0 0;
+    }
+
+    /* LIGHTBOX */
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.82);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      padding:14px;
+    }
+    .viewer{
+      width:min(1100px, 96vw);
+      max-height:90vh;
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      background:rgba(0,0,0,0.25);
+      box-shadow:0 15px 40px rgba(0,0,0,0.5);
+    }
+  .viewerInner{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:90vh;
+  padding:0;
+}
+.viewer img, .viewer video {
+   width: 100%;
+   height: 100%;
+   max-height: 90vh;
+   object-fit: contain;
+   border-radius: 14px;
+   background: #000;
+   position: relative;
+   z-index: 1;
+}
+@media (orientation: landscape) {
+  .viewer img, .viewer video {
+    object-fit: cover;
+  }
+}
+    .navBtn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:52px;
+      height:52px;
+      border:none;
+      border-radius:999px;
+      background:rgba(0,0,0,0.45);
+      color:#fff;
+      font-size:28px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      user-select:none;
+     z-index: 9999;
+    }
+    .prev{ left:12px; }
+    .next{ right:12px; }
+
+    .closeBtn{
+      position:absolute;
+      top:10px;
+      right:10px;
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:999px;
+      background:rgba(0,0,0,0.55);
+      color:#fff;
+      font-size:24px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      user-select:none;
+      z-index: 10000;
+    }
+
+   .fullBtn{
+  position:absolute;
+  top:10px;
+  right:64px;
+  width:46px;
+  height:46px;
+  border:none;
+  border-radius:999px;
+  background:rgba(0,0,0,0.55);
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  user-select:none;
+  z-index:10000;
+}
+
+    .hint{
+      position:absolute;
+      bottom:10px;
+      left:50%;
+      transform:translateX(-50%);
+      background:rgba(0,0,0,0.55);
+      color:#fff;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      max-width:92%;
+      text-align:center;
+    }
+
+    @media (max-width:520px){
+      h1{ font-size:30px; }
+      .thumb, .videoThumbBox, .videoThumbBox img{ width:140px; height:110px; }
+      .navBtn{ width:46px; height:46px; font-size:24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Botón volver -->
+  <a class="btn" href="../index.html#fauna">← Volver a Fauna</a>
+
+  <!-- Logo -->
+  <div class="logoWrap">
+    <img src="../assets/logo.jpg" alt="Logo Santuario Nacional Pampa Hermosa">
+    <small>Santuario Nacional Pampa Hermosa</small>
+  </div>
+
+  <h1>🐻 Oso de Anteojos</h1>
+  <div class="latin">Tremarctos ornatus</div>
+
+  <!-- Foto principal (puedes cambiarla por la que quieras) -->
+  <img class="hero" src="oso.jpg" alt="Oso de anteojos">
+
+  <!-- Audio -->
+  <h2 style="text-align:center; margin-top:25px;">🎧 Narración</h2>
+
+<div style="max-width:760px; margin:10px auto; background:#244C34; padding:16px; border-radius:18px;">
+  <audio controls style="width:100%;">
+    <source src="oso-anteojos.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+</div>
+
+  <!-- Descripción -->
+  <div class="card">
+    <h2>📝 Descripción</h2>
+    <p>
+      El oso de anteojos es el único oso que habita en Sudamérica. Cumple un papel clave en la dispersión de semillas y en el equilibrio del bosque.
+    </p>
+  </div>
+
+  <!-- Dato curioso -->
+  <div class="card">
+    <h2>🌟 Dato curioso</h2>
+    <p>
+      Sus “anteojos” son manchas claras alrededor de los ojos que varían en cada individuo, como una huella única.
+    </p>
+  </div>
+
+  <!-- FOTOS -->
+  <div class="sectionTitle">🖼 Fotos</div>
+  <div class="thumbRow">
+    <img class="thumb" src="oso-g1.jpg" alt="Foto 1" onclick="abrir(0)">
+    <img class="thumb" src="oso-g2.jpg" alt="Foto 2" onclick="abrir(1)">
+    <img class="thumb" src="oso-g3.jpg" alt="Foto 3" onclick="abrir(2)">
+    <img class="thumb" src="oso-g4.jpg" alt="Foto 4" onclick="abrir(3)">
+    <img class="thumb" src="oso-g5.jpg" alt="Foto 5" onclick="abrir(4)">
+  </div>
+  <div class="note">(Fotos: <b>oso-g1.jpg</b> … <b>oso-g5.jpg</b>)</div>
+
+  <!-- VIDEOS -->
+  <div class="sectionTitle">🎥 Videos</div>
+  <div class="thumbRow">
+
+    <div class="videoThumbBox" onclick="abrir(5)">
+      <img src="oso-v1.jpg" alt="Video 1 miniatura">
+      <div class="playBadge"><span>▶</span></div>
+    </div>
+
+    <div class="videoThumbBox" onclick="abrir(6)">
+      <img src="oso-v2.jpg" alt="Video 2 miniatura">
+      <div class="playBadge"><span>▶</span></div>
+    </div>
+
+  </div>
+  <div class="note">(Videos: <b>oso-v1.mp4</b>, <b>oso-v2.mp4</b> | Miniaturas: <b>oso-v1.jpg</b>, <b>oso-v2.jpg</b>)</div>
+
+  <!-- LIGHTBOX / VISOR -->
+  <div class="overlay" id="overlay" onclick="cerrarSiFondo(event)">
+   <div id="mensajeGiro" style="
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(0,0,0,0.75);
+padding:12px 18px;
+border-radius:12px;
+font-size:14px;
+color:white;
+display:none;
+z-index:20000;
+">
+📱 Gira tu celular para ver mejor la imagen o el video
+</div>
+    <div class="viewer">
+     <button class="closeBtn" type="button" onclick="cerrar(event)">✕</button>
+     <button class="fullBtn" type="button" onclick="activarPantallaCompleta(document.querySelector('.viewer'))">⛶</button>
+      <button class="navBtn prev" onclick="anterior()" title="Anterior">‹</button>
+      <button class="navBtn next" onclick="siguiente()" title="Siguiente">›</button>
+
+      <div class="viewerInner" id="viewerInner"></div>
+      <div class="hint" id="hint">Tip: toca ▶ para reproducir. Puedes girar el celular para pantalla completa.</div>
+    </div>
+  </div>
+
+  <script>
+    // Lista completa: 5 fotos + 2 videos
+    const items = [
+      { type: "img",   src: "oso-g1.jpg" }, // 0
+      { type: "img",   src: "oso-g2.jpg" }, // 1
+      { type: "img",   src: "oso-g3.jpg" }, // 2
+      { type: "img",   src: "oso-g4.jpg" }, // 3
+      { type: "img",   src: "oso-g5.jpg" }, // 4
+      { type: "video", src: "oso-v1.mp4" }, // 5
+      { type: "video", src: "oso-v2.mp4" }  // 6
+    ];
+
+    let idx = 0;
+
+ function render(){
+  const overlay = document.getElementById("overlay");
+  const cont = document.getElementById("viewerInner");
+  const hint = document.getElementById("hint");
+  cont.innerHTML = "";
+
+  const item = items[idx];
+
+  if(item.type === "img"){
+    const im = document.createElement("img");
+    im.src = item.src;
+    im.alt = "Imagen";
+    cont.appendChild(im);
+    hint.style.display = "none";
+  } else {
+    const v = document.createElement("video");
+    v.src = item.src;
+    v.controls = true;
+    v.playsInline = true;
+    v.preload = "metadata";
+    cont.appendChild(v);
+    hint.style.display = "block";
+  }
+
+  overlay.style.display = "flex";
+}
+
+  function abrir(i){
+  idx = i;
+  render();
+
+  const mensaje = document.getElementById("mensajeGiro");
+  if(mensaje){
+    mensaje.style.display = "block";
+  }
+}
+
+function cerrar(e){
+  if(e) e.stopPropagation();
+
+  const overlay = document.getElementById("overlay");
+  const cont = document.getElementById("viewerInner");
+
+  const vid = cont.querySelector("video");
+  if(vid){
+    vid.pause();
+    vid.currentTime = 0;
+  }
+
+  const mensaje = document.getElementById("mensajeGiro");
+  if(mensaje){
+    mensaje.style.display = "none";
+  }
+
+  if(document.fullscreenElement){
+    document.exitFullscreen();
+  }
+
+  overlay.style.display = "none";
+  cont.innerHTML = "";
+}
+
+    function cerrarSiFondo(e){
+      // Solo cerrar si hacen click en el fondo, no dentro del visor
+      if(e.target.id === "overlay"){
+        cerrar();
+      }
+    }
+
+   function siguiente(e){
+  if(e) e.stopPropagation();
+
+  const cont = document.getElementById("viewerInner");
+  const vid = cont.querySelector("video");
+  if(vid){
+    vid.pause();
+    vid.currentTime = 0;
+  }
+
+  idx = (idx + 1) % items.length;
+  render();
+}
+
+    function anterior(e){
+  if(e) e.stopPropagation();
+
+  const cont = document.getElementById("viewerInner");
+  const vid = cont.querySelector("video");
+  if(vid){
+    vid.pause();
+    vid.currentTime = 0;
+  }
+
+  idx = (idx - 1 + items.length) % items.length;
+  render();
+}
+
+    // Audio (botón)
+    function toggleAudio(){
+      const a = document.getElementById("aud");
+      if(!a) return;
+      if(a.paused) a.play();
+      else a.pause();
+    }
+
+function activarPantallaCompleta(elemento){
+  if(elemento.requestFullscreen){
+    elemento.requestFullscreen();
+  }else if(elemento.webkitRequestFullscreen){
+    elemento.webkitRequestFullscreen();
+  }else if(elemento.msRequestFullscreen){
+    elemento.msRequestFullscreen();
+  }
+}
+    // Teclas (PC)
+    document.addEventListener("keydown", (e) => {
+      const overlay = document.getElementById("overlay");
+      if(overlay.style.display !== "flex") return;
+
+      if(e.key === "Escape") cerrar();
+      if(e.key === "ArrowRight") siguiente();
+      if(e.key === "ArrowLeft") anterior();
+    });
+  </script>
+
+</body>
+</html>
