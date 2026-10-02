@@ -498,15 +498,22 @@ function cerrar(e){
       else a.pause();
     }
 
-function activarPantallaCompleta(elemento){
-  if(elemento.requestFullscreen){
-    elemento.requestFullscreen();
-  }else if(elemento.webkitRequestFullscreen){
-    elemento.webkitRequestFullscreen();
-  }else if(elemento.msRequestFullscreen){
-    elemento.msRequestFullscreen();
-  }
-}
+async function activarPantallaCompleta(elemento){
+  try {
+    // Entrar en pantalla completa
+    if (elemento.requestFullscreen) {
+      await elemento.requestFullscreen();
+    } else if (elemento.webkitRequestFullscreen) {
+      elemento.webkitRequestFullscreen();
+    }
+
+    // Intentar poner el móvil en horizontal
+    if (screen.orientation && screen.orientation.lock) {
+      await screen.orientation.lock("landscape");
+    }
+
+  } catch (error) {
+    console.log("El navegador no permite cambiar la 
     // Teclas (PC)
     document.addEventListener("keydown", (e) => {
       const overlay = document.getElementById("overlay");
