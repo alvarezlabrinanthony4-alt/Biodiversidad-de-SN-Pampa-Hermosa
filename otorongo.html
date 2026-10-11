@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Oso de Anteojos</title>
+  <title>Otorongo(Jaguar)</title>
 
   <style>
     body{
@@ -295,11 +295,11 @@
     <small>Santuario Nacional Pampa Hermosa</small>
   </div>
 
-  <h1>🐻 Oso de Anteojos</h1>
-  <div class="latin">Tremarctos ornatus</div>
+  <h1>🐆 Otorongo</h1>
+  <div class="latin">Panthera onca</div>
 
   <!-- Foto principal (puedes cambiarla por la que quieras) -->
-  <img class="hero" src="oso.JPG" alt="Oso de anteojos">
+  <img class="hero" src="otorongo.jpg" alt="Otorongo">
 
   <!-- Audio -->
   <h2 style="text-align:center; margin-top:25px;">🎧 Narración</h2>
@@ -315,7 +315,7 @@
   <div class="card">
     <h2>📝 Descripción</h2>
     <p>
-      El oso de anteojos es el único oso que habita en Sudamérica. Cumple un papel clave en la dispersión de semillas y en el equilibrio del bosque.
+     El otorongo es el felino más grande de América. Cumple un papel fundamental en el equilibrio de los ecosistemas al regular las poblaciones de otras especies.
     </p>
   </div>
 
@@ -323,37 +323,56 @@
   <div class="card">
     <h2>🌟 Dato curioso</h2>
     <p>
-      Sus “anteojos” son manchas claras alrededor de los ojos que varían en cada individuo, como una huella única.
+      El otorongo es un excelente nadador y puede cruzar ríos con facilidad para desplazarse y buscar alimento.
     </p>
   </div>
 
   <!-- FOTOS -->
-  <div class="sectionTitle">🖼 Fotos</div>
-  <div class="thumbRow">
-    <img class="thumb" src="oso-g1.jpg" alt="Foto 1" onclick="abrir(0)">
-    <img class="thumb" src="oso-g2.jpg" alt="Foto 2" onclick="abrir(1)">
-    <img class="thumb" src="oso-g3.jpg" alt="Foto 3" onclick="abrir(2)">
-    <img class="thumb" src="oso-g4.jpg" alt="Foto 4" onclick="abrir(3)">
-    <img class="thumb" src="oso-g5.jpg" alt="Foto 5" onclick="abrir(4)">
-  </div>
-  <div class="note">(Fotos: <b>oso-g1.jpg</b> … <b>oso-g5.jpg</b>)</div>
+<div class="sectionTitle">🖼 Fotos</div>
+<div class="thumbRow">
+  <img class="thumb" src="otorongo-g1.jpg" alt=s="thumb" src="otorongo-g3.jpg" alt="Foto 3" onclick="abrir(2)">
+ <b>otorongo-g2.jpg</b>, <b>otorongo-g3.jpg</b>)
+</div>
 
-  <!-- VIDEOS -->
-  <div class="sectionTitle">🎥 Videos</div>
-  <div class="thumbRow">
+<!-- VIDEOS -->
+<div class="sectionTitle">🎥 Videos</div>
+<div class="thumbRow">
+
+    <div class="videoThumbBox" onclick="abrir(3)">
+      otorongo-v1.jpg
+      <div class="playBadge"><span>▶</span></div>
+    </div>
+
+    <div class="videoThumbBox" onclick="abrir(4)">
+      otorongo-v2.jpg
+      <div class="playBadge"><span>▶</span></div>
+    </div>
 
     <div class="videoThumbBox" onclick="abrir(5)">
-      <img src="oso-v1.jpg" alt="Video 1 miniatura">
+      otorongo-v3.jpg
       <div class="playBadge"><span>▶</span></div>
     </div>
 
     <div class="videoThumbBox" onclick="abrir(6)">
-      <img src="oso-v2.jpg" alt="Video 2 miniatura">
+      otorongo-v4.jpg
       <div class="playBadge"><span>▶</span></div>
     </div>
 
-  </div>
-  <div class="note">(Videos: <b>oso-v1.mp4</b>, <b>oso-v2.mp4</b> | Miniaturas: <b>oso-v1.jpg</b>, <b>oso-v2.jpg</b>)</div>
+    <div class="videoThumbBox" onclick="abrir(7)">
+      otorongo-v5.jpg
+      <div class="playBadge"><span>▶</span></div>
+    </div>
+
+    <div class="videoThumbBox" onclick="abrir(8)">
+      otorongo-v6.jpg
+      <div class="playBadge"><span>▶</span></div>
+    </div>
+
+</div>
+
+<div class="note">
+(Videos: <b>otorongo-v1.mp4</b>, <b>otorongo-v2.mp4</b>, <b>otorongo-v3.mp4</b>, <b>otorongo-v4.mp4</b>, <b>otorongo-v5.mp4</b>, <b>otorongo-v6.mp4</b>)
+</div>
 
   <!-- LIGHTBOX / VISOR -->
   <div class="overlay" id="overlay" onclick="cerrarSiFondo(event)">
@@ -384,16 +403,19 @@ z-index:20000;
   </div>
 
   <script>
-    // Lista completa: 5 fotos + 2 videos
-    const items = [
-      { type: "img",   src: "oso-g1.jpg" }, // 0
-      { type: "img",   src: "oso-g2.jpg" }, // 1
-      { type: "img",   src: "oso-g3.jpg" }, // 2
-      { type: "img",   src: "oso-g4.jpg" }, // 3
-      { type: "img",   src: "oso-g5.jpg" }, // 4
-      { type: "video", src: "oso-v1.mp4" }, // 5
-      { type: "video", src: "oso-v2.mp4" }  // 6
-    ];
+// Lista completa: 3 fotos + 6 videos
+const items = [
+      { type: "img",   src: "otorongo-g1.jpg" }, // 0
+      { type: "img",   src: "otorongo-g2.jpg" }, // 1
+      { type: "img",   src: "otorongo-g3.jpg" }, // 2
+
+      { type: "video", src: "otorongo-v1.mp4" }, // 3
+      { type: "video", src: "otorongo-v2.mp4" }, // 4
+      { type: "video", src: "otorongo-v3.mp4" }, // 5
+      { type: "video", src: "otorongo-v4.mp4" }, // 6
+      { type: "video", src: "otorongo-v5.mp4" }, // 7
+      { type: "video", src: "otorongo-v6.mp4" }  // 8
+];
 
     let idx = 0;
 
