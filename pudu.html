@@ -295,11 +295,11 @@
     <small>Santuario Nacional Pampa Hermosa</small>
   </div>
 
-  <h1>🐱 Puma Yaguarundí</h1>
+  <h1>🦌 Pudú</h1>
   <div class="latin">Pudella sp.</div>
 
   <!-- Foto principal (puedes cambiarla por la que quieras) -->
-  <img class="hero" src="pudú.jpg" alt="Pudú">
+  <img class="hero" src="pudu.jpg" alt="Pudú">
 
   <!-- Audio -->
   <h2 style="text-align:center; margin-top:25px;">🎧 Narración</h2>
@@ -327,41 +327,30 @@
     </p>
   </div>
 
-  <!-- FOTOS -->
-<div class="sectionTitle">🖼 Fotos</div>
-<div class="thumbRow">
-  <img class="thumb" src="yagu.g1.JPG" alt="Foto 1" onclick="abrir(0)">
-  <img class="thumb" src="yagu-g2.JPG" alt="Foto 2" onclick="abrir(1)">
-</div>
-
-<div class="note">
-(Fotos: <b>yagu.g1.JPG</b>, <b>yagu-g2.JPG</b>)
-</div>
 
 <!-- VIDEOS -->
 <div class="sectionTitle">🎥 Videos</div>
 <div class="thumbRow">
 
-    <div class="videoThumbBox" onclick="abrir(2)">
-      <img src="yagu-v1.jpg" alt="Video 1 miniatura">
-      <div class="playBadge"><span>▶</span></div>
-    </div>
+  <div class="videoThumbBox" onclick="abrir(0)">
+    pudu-v1.jpg
+    <div class="playBadge"><span>▶</span></div>
+  </div>
 
-    <div class="videoThumbBox" onclick="abrir(3)">
-      <img src="yagu-v2.jpg" alt="Video 2 miniatura">
-      <div class="playBadge"><span>▶</span></div>
-    </div>
+  <div class="videoThumbBox" onclick="abrir(1)">
+    pudu-v2.jpg
+    <div class="playBadge"><span>▶</span></div>
+  </div>
 
-    <div class="videoThumbBox" onclick="abrir(4)">
-      <img src="yagu-v3.jpg" alt="Video 3 miniatura">
-      <div class="playBadge"><span>▶</span></div>
-    </div>
+  <div class="videoThumbBox" onclick="abrir(2)">
+    pudu-v3.jpg
+    <div class="playBadge"><span>▶</span></div>
+  </div>
 
 </div>
 
 <div class="note">
-(Videos: <b>yagu-v1.mp4</b>, <b>yagu-v2.mp4</b>, <b>yagu-v3.mp4</b> |
-Miniaturas: <b>yagu-v1.jpg</b>, <b>yagu-v2.jpg</b>, <b>yagu-v3.jpg</b>)
+(Videos: <b>pudu-v1.mp4</b>, <b>pudu-v2.mp4</b>, <b>pudu-v3.mp4</b>)
 </div>
 
   <!-- LIGHTBOX / VISOR -->
@@ -393,16 +382,13 @@ z-index:20000;
   </div>
 
   <script>
-    // Lista completa: 2 fotos + 3 videos
-    const items = [
-      { type: "img",   src: "yagu.g1.JPG" }, // 0
-      { type: "img",   src: "yagu-g2.JPG" }, // 1
-
-      { type: "video", src: "yagu-v1.mp4" }, // 2
-      { type: "video", src: "yagu-v2.mp4" }, // 3
-      { type: "video", src: "yagu-v3.mp4" }  // 4
+    // Lista completa: 0 fotos + 3 videos
+   const items = [
+  { type: "video", src: "pudu-v1.mp4" }, // 0
+  { type: "video", src: "pudu-v2.mp4" }, // 1
+  { type: "video", src: "pudu-v3.mp4" }  // 2
 ];
-    
+ 
     let idx = 0;
 
  function render(){
