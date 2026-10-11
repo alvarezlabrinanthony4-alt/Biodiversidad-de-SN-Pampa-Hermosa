@@ -351,9 +351,22 @@
       <img src="oso-v2.jpg" alt="Video 2 miniatura">
       <div class="playBadge"><span>▶</span></div>
     </div>
+ <div class="videoThumbBox" onclick="abrir(7)">
+      <img src="oso-v3.jpg" alt="Video 3 miniatura">
+      <div class="playBadge"><span>▶</span></div>
+    </div>
 
+    <div class="videoThumbBox" onclick="abrir(8)">
+      <img src="oso-v4.jpg" alt="Video 4 miniatura">
+      <div class="playBadge"><span>▶</span></div>
+    </div>
+     <div class="videoThumbBox" onclick="abrir(9)">
+      <img src="oso-v5.jpg" alt="Video 5 miniatura">
+      <div class="playBadge"><span>▶</span></div>
+    </div>
+    
   </div>
-  <div class="note">(Videos: <b>oso-v1.mp4</b>, <b>oso-v2.mp4</b> | Miniaturas: <b>oso-v1.jpg</b>, <b>oso-v2.jpg</b>)</div>
+  <div class="note">(Videos: <b>oso-v1.mp4</b>, <b>oso-v2.mp4</b>, <b>oso-v3.mp4</b>, <b>oso-v4.mp4</b>, <b>oso-v5.mp4</b> | Miniaturas: <b>oso-v1.jpg</b>, <b>oso-v2.jpg</b>,  <b>oso-v3.jpg</b>,  <b>oso-v4.jpg</b>,  <b>oso-v5.jpg</b>)</div>
 
   <!-- LIGHTBOX / VISOR -->
   <div class="overlay" id="overlay" onclick="cerrarSiFondo(event)">
@@ -391,10 +404,13 @@ z-index:20000;
       { type: "img",   src: "oso-g3.jpg" }, // 2
       { type: "img",   src: "oso-g4.jpg" }, // 3
       { type: "img",   src: "oso-g5.jpg" }, // 4
-      { type: "video", src: "oso-v1.mp4" }, // 5
-      { type: "video", src: "oso-v2.mp4" }  // 6
-    ];
 
+      { type: "video", src: "oso-v1.mp4" }, // 5
+      { type: "video", src: "oso-v2.mp4" }, // 6
+      { type: "video", src: "oso-v3.mp4" }, // 7
+      { type: "video", src: "oso-v4.mp4" }, // 8
+      { type: "video", src: "oso-v5.mp4" }  // 9
+    ];
     let idx = 0;
 
  function render(){
