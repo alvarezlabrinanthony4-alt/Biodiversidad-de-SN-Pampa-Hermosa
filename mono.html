@@ -328,42 +328,46 @@
       mientras busca alimento o se deplaza por las copas de los arboles.
     </p>
   </div>
-
-  <!-- FOTOS -->
+<!-- FOTOS -->
 <div class="sectionTitle">🖼 Fotos</div>
 <div class="thumbRow">
-  <img class="thumb" src="yagu.g1.JPG" alt="Foto 1" onclick="abrir(0)">
-  <img class="thumb" src="yagu-g2.JPG" alt="Foto 2" onclick="abrir(1)">
-</div>
-
-<div class="note">
-(Fotos: <b>yagu.g1.JPG</b>, <b>yagu-g2.JPG</b>)
+<img class="thumb" class="thumb" src="mono-g2.jpg" alt="Foto 2" onclick="abrir(1 class="note">
+(Fotos: <b>mono-g1.jpg</b>, <b>mono-g2.jpg</b>, <b>mono-g3.jpg</b>, <b>mono-g4.jpg</b>, <b>mono-g5.jpg</b>)
 </div>
 
 <!-- VIDEOS -->
 <div class="sectionTitle">🎥 Videos</div>
 <div class="thumbRow">
 
-    <div class="videoThumbBox" onclick="abrir(2)">
-      <img src="yagu-v1.jpg" alt="Video 1 miniatura">
-      <div class="playBadge"><span>▶</span></div>
-    </div>
+  <div class="videoThumbBox" onclick="abrir(5)">
+    <img src=pg
+    <div class="playBadge"><span>▶</span></div>
+  </div>
 
-    <div class="videoThumbBox" onclick="abrir(3)">
-      <img src="yagu-v2.jpg" alt="Video 2 miniatura">
-      <div class="playBadge"><span>▶</span></div>
-    </div>
+  <div class="videoThumbBox" onclick="abrir(6)">
+    mono-v2.jpg
+    <div class="playBadge"><span>▶</span></div>
+  </div>
 
-    <div class="videoThumbBox" onclick="abrir(4)">
-      <img src="yagu-v3.jpg" alt="Video 3 miniatura">
-      <div class="playBadge"><span>▶</span></div>
-    </div>
+  <div class="videoThumbBox" onclick="abrir(7)">
+    mono-v3.jpg
+    <div class="playBadge"><span>▶</span></div>
+  </div>
+
+  <div class="videoThumbBox" onclick="abrir(8)">
+    mono-v4.jpg
+    <div class="playBadge"><span>▶</span></div>
+  </div>
+
+  <div class="videoThumbBox" onclick="abrir(9)">
+    mono-v5.jpg
+    <div class="playBadge"><span>▶</span></div>
+  </div>
 
 </div>
 
 <div class="note">
-(Videos: <b>yagu-v1.mp4</b>, <b>yagu-v2.mp4</b>, <b>yagu-v3.mp4</b> |
-Miniaturas: <b>yagu-v1.jpg</b>, <b>yagu-v2.jpg</b>, <b>yagu-v3.jpg</b>)
+(Videos: <b>mono-v1.mp4</b>, <b>mono-v2.mp4</b>, <b>mono-v3.mp4</b>, <b>mono-v4.mp4</b>, <b>mono-v5.mp4</b>)
 </div>
 
   <!-- LIGHTBOX / VISOR -->
@@ -395,14 +399,19 @@ z-index:20000;
   </div>
 
   <script>
-    // Lista completa: 2 fotos + 3 videos
-    const items = [
-      { type: "img",   src: "yagu.g1.JPG" }, // 0
-      { type: "img",   src: "yagu-g2.JPG" }, // 1
+    // Lista completa: 5 fotos + 5 videos
+const items = [
+  { type: "img",   src: "mono-g1.jpg" }, // 0
+  { type: "img",   src: "mono-g2.jpg" }, // 1
+  { type: "img",   src: "mono-g3.jpg" }, // 2
+  { type: "img",   src: "mono-g4.jpg" }, // 3
+  { type: "img",   src: "mono-g5.jpg" }, // 4
 
-      { type: "video", src: "yagu-v1.mp4" }, // 2
-      { type: "video", src: "yagu-v2.mp4" }, // 3
-      { type: "video", src: "yagu-v3.mp4" }  // 4
+  { type: "video", src: "mono-v1.mp4" }, // 5
+  { type: "video", src: "mono-v2.mp4" }, // 6
+  { type: "video", src: "mono-v3.mp4" }, // 7
+  { type: "video", src: "mono-v4.mp4" }, // 8
+  { type: "video", src: "mono-v5.mp4" }  // 9
 ];
     
     let idx = 0;
