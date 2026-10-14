@@ -318,7 +318,6 @@
       El Cedro de altura es una de las especies forestales emblemáticas del Santuario Nacional Pampa Hermosa. 
       La conservación de sus bosques relictos fue una de las principales razones para la creación de esta ANP.
       Establecida el 26 de marzo de 2009 mediante decreto supremo N°005-2009-MINAM.
-      Su presencia representa un importante patrimonio natural para la selva central del Perú.
     </p>
   </div>
 
@@ -327,7 +326,7 @@
     <h2>🌟 Dato curioso</h2>
     <p>
      Entre los cedros de altura protegidos en el Santuario Nacional Pampa Hermosa destaca el “Cedro La Abuela” 
-     Que se ha convertido en un símbolo natural del santuario. 
+     Que se ha convertido en un símbolo natural del santuario.
       Su antigüedad y majestuosidad lo han convertido en un árbol emblemático, rodeado de admiración 
       y cierto misticismo entre visitantes y pobladores locales.
     </p>
@@ -336,12 +335,14 @@
   <!-- FOTOS -->
 <div class="sectionTitle">🖼 Fotos</div>
 <div class="thumbRow">
-  <img class="thumb" src="yagu.g1.JPG" alt="Foto 1" onclick="abrir(0)">
-  <img class="thumb" src="yagu-g2.JPG" alt="Foto 2" onclick="abrir(1)">
+  <img class="thumb" src="cedro.g1.JPG" alt="Foto 1" onclick="abrir(0)">
+  <img class="thumb" src="cedro-g2.JPG" alt="Foto 2" onclick="abrir(1)">
+  <img class="thumb" src="cedro.g3.JPG" alt="Foto 3" onclick="abrir(2)">
+  <img class="thumb" src="cedro-g4.JPG" alt="Foto 4" onclick="abrir(3)">
 </div>
 
 <div class="note">
-(Fotos: <b>yagu.g1.JPG</b>, <b>yagu-g2.JPG</b>)
+(Fotos: <b>cedro.g1.jpg</b>, <b>cedro-g2.jpg</b>, <b>cedro-g3.jpg</b>, <b>cedro-g4.jpg</b>)
 </div>
 
 <!-- VIDEOS -->
@@ -349,25 +350,29 @@
 <div class="thumbRow">
 
     <div class="videoThumbBox" onclick="abrir(2)">
-      <img src="yagu-v1.jpg" alt="Video 1 miniatura">
+      <img src="cedro-v1.jpg" alt="Video 1 miniatura">
       <div class="playBadge"><span>▶</span></div>
     </div>
 
     <div class="videoThumbBox" onclick="abrir(3)">
-      <img src="yagu-v2.jpg" alt="Video 2 miniatura">
+      <img src="cedro-v2.jpg" alt="Video 2 miniatura">
       <div class="playBadge"><span>▶</span></div>
     </div>
 
     <div class="videoThumbBox" onclick="abrir(4)">
-      <img src="yagu-v3.jpg" alt="Video 3 miniatura">
+      <img src="cedro-v3.jpg" alt="Video 3 miniatura">
       <div class="playBadge"><span>▶</span></div>
     </div>
-
+  
+  <div class="videoThumbBox" onclick="abrir(5)">
+      <img src="cedro-v4.jpg" alt="Video 4 miniatura">
+      <div class="playBadge"><span>▶</span></div>
+    </div>
 </div>
 
 <div class="note">
-(Videos: <b>yagu-v1.mp4</b>, <b>yagu-v2.mp4</b>, <b>yagu-v3.mp4</b> |
-Miniaturas: <b>yagu-v1.jpg</b>, <b>yagu-v2.jpg</b>, <b>yagu-v3.jpg</b>)
+(Videos: <b>cedro-v1.mp4</b>, <b>cedro-v2.mp4</b>, <b>cedro-v3.mp4</b>, <b>cedro-v4.mp4</b> |
+Miniaturas: <b>cedro-v1.jpg</b>, <b>cedro-v2.jpg</b>, <b>cedro-v3.jpg</b>, <b>cedro-v4.jpg</b> )
 </div>
 
   <!-- LIGHTBOX / VISOR -->
@@ -399,14 +404,17 @@ z-index:20000;
   </div>
 
   <script>
-    // Lista completa: 2 fotos + 3 videos
+    // Lista completa: 4 fotos + 4 videos
     const items = [
-      { type: "img",   src: "yagu.g1.JPG" }, // 0
-      { type: "img",   src: "yagu-g2.JPG" }, // 1
-
-      { type: "video", src: "yagu-v1.mp4" }, // 2
-      { type: "video", src: "yagu-v2.mp4" }, // 3
-      { type: "video", src: "yagu-v3.mp4" }  // 4
+      { type: "img",   src: "cedro.g1.jpg" }, // 0
+      { type: "img",   src: "cedro-g2.JPG" }, // 1
+      { type: "img",   src: "cedro.g3.jpg" }, // 2
+      { type: "img",   src: "cedro-g4.JPG" }, // 3
+      
+      { type: "video", src: "cedro-v1.mp4" }, // 2
+      { type: "video", src: "cedro-v2.mp4" }, // 3
+      { type: "video", src: "cedro-v3.mp4" }  // 4
+      { type: "video", src: "cedro-v4.mp4" }, // 5
 ];
     
     let idx = 0;
